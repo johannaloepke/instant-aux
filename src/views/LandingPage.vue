@@ -21,27 +21,27 @@
 
         <p class="display-1 font-weight-medium mt-5 pt-5 pb-3"> Artists </p>
         <SearchChips
-          label="twenty one pilots"
+          label="e.g. twenty one pilots"
           @chip_searched="artistsSearched($event)" />
 
         <v-layout justify-center>
           <v-flex xs10>
             <p class="display-1 font-weight-medium mt-5 pt-5 mb-7"> Track Attributes </p>
             <attribute-slider
-              label="Danceability"
-              prependIcon="mdi-human-male"
-              appendIcon="mdi-human-handsup"
-              @attribute_value="danceabilityValue($event)" />
+              label="Acousticness"
+              prependIcon="mdi-guitar-electric"
+              appendIcon="mdi-guitar-acoustic"
+              @attribute_value="acousticnessValue($event)" />
           </v-flex>
         </v-layout>
 
         <v-layout justify-center>
           <v-flex xs10>
             <attribute-slider
-              label="Acousticness"
-              prependIcon="mdi-guitar-electric"
-              appendIcon="mdi-guitar-acoustic"
-              @attribute_value="acousticnessValue($event)" />
+              label="Danceability"
+              prependIcon="mdi-human-male"
+              appendIcon="mdi-human-handsup"
+              @attribute_value="danceabilityValue($event)" />
           </v-flex>
         </v-layout>
 
@@ -58,20 +58,20 @@
         <v-layout justify-center>
           <v-flex xs10>
             <attribute-slider
-              label="Mood"
-              prependIcon="mdi-emoticon-sad"
-              appendIcon="mdi-emoticon-happy"
-              @attribute_value="moodValue($event)" />
+              label="Energy"
+              prependIcon="mdi-tortoise"
+              appendIcon="mdi-rabbit"
+              @attribute_value="energyValue($event)" />
           </v-flex>
         </v-layout>
 
         <v-layout justify-center>
           <v-flex xs10>
             <attribute-slider
-              label="Energy"
-              prependIcon="mdi-tortoise"
-              appendIcon="mdi-rabbit"
-              @attribute_value="energyValue($event)" />
+              label="Mood"
+              prependIcon="mdi-emoticon-sad"
+              appendIcon="mdi-emoticon-happy"
+              @attribute_value="moodValue($event)" />
           </v-flex>
         </v-layout>
       </v-flex>

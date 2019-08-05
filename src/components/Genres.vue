@@ -24,7 +24,7 @@
 export default {
     data: () => ({
       // All of Spotify's available genres
-      // TODO: maybe trim down on the amount of genres shown? See more option?
+      // TODO: maybe trim down on the amount of genres shown? See more options?
       genres: [
         'acoustic',
         'afrobeat',
