@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import LandingPage from './views/LandingPage.vue'
+import Results from './views/Results.vue'
+import NotFound from './views/NotFound.vue'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.BASE_URL, 
   routes: [
     {
       path: '/', // this is the default 'home' page
@@ -16,10 +18,11 @@ export default new VueRouter({
     {
       path: '/results',
       name: 'results',
-      // route level code-splitting
-      // this generates a separate chunk (results.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "results" */ './views/Results.vue')
+      component: Results
+    },
+    { 
+      path: '*', 
+      component: NotFound
     }
   ],
   scrollBehavior () {

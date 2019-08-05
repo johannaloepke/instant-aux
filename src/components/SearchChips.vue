@@ -1,28 +1,29 @@
 <template>
 <v-layout justify-center>
-    <v-flex xs10>
-        <v-combobox
-            v-model="searchChips"
-            chips
-            clearable
-            :label="label"
-            multiple
-            solo
-            height="80"
-        >
-            <template v-slot:selection="{ attrs, item, select, selected }">
-            <v-chip
-                color="primary"
-                v-bind="attrs"
-                :input-value="selected"
-                close
-                @click:close="remove(item)"
-            >
-                <strong>{{ item }}</strong>&nbsp;
-            </v-chip>
-            </template>
-        </v-combobox>
-    </v-flex>
+  <v-flex xs10>
+    <v-combobox
+      v-model="searchChips"
+      chips
+      append-icon=""
+      clearable
+      :label="label"
+      multiple
+      solo
+      height="80"
+    >
+      <template v-slot:selection="{ attrs, item, select, selected }">
+      <v-chip
+        color="primary"
+        v-bind="attrs"
+        :input-value="selected"
+        close
+        @click:close="remove(item)"
+      >
+          <strong>{{ item }}</strong>&nbsp;
+      </v-chip>
+      </template>
+    </v-combobox>
+  </v-flex>
 </v-layout>
 </template>
 
@@ -38,7 +39,6 @@
     watch: {
       // Let the parent know which chips have been searched for
       searchChips(list) {
-        console.log(list);
         this.$emit('chip_searched', list);
       }
     },
@@ -54,10 +54,3 @@
     }
   }
 </script>
-
-<style scoped>
-/* TODO: remove that annoying arrow */
-div.v-input__icon {  
-    display: none;
-}
-</style>

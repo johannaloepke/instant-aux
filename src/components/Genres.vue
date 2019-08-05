@@ -4,6 +4,7 @@
       <v-chip-group
         v-model="genresSelected"
         multiple
+        max=5
         column
         active-class="primary--text"
       >
@@ -157,13 +158,10 @@ export default {
   watch: {
     // Let the parent know which genres are currently selected
     genresSelected(selected) {
-      console.log('GENRE');
-      console.log(selected);
       let genreNames = [];
       for (let index of selected) {
         genreNames.push(this.genres[index]);
       }
-      console.log(genreNames);
       this.$emit('genres_selected', genreNames);
     }
   },

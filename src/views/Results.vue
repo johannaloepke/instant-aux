@@ -8,14 +8,15 @@
     >
 
       <h1 class="display-2 font-weight-bold ma-5 pa-3 pb-6 mb-10"> Results: </h1>
-
+  
+      <!-- TODO: Add loading bar for better feedback -->
       <div v-for="link in embedLinks" :key="link.id" class="mb-n8 mt-n5">
         <iframe 
           :src="link"
           frameborder="0" 
           allowtransparency="true" 
           allow="encrypted-media"
-          style="width:60vw;height:50%;">
+          style="width:70vw;height:50%;">
         </iframe>
       </div>
     </v-layout>
@@ -36,13 +37,9 @@ export default {
     }
   },
   created () {
-    console.log('IN results');
-    console.log(this.tracks);
     for (const track of this.tracks) {
-      console.log(track);
       this.embedLinks.push('https://open.spotify.com/embed/track/' + track.id);
     }
-    console.log(this.embedLinks);
   },
   beforeDestroy () {
     delete this.tracks;
