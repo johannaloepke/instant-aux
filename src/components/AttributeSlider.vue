@@ -1,9 +1,9 @@
 <template>
  <v-layout row wrap align-center>
     <v-switch 
-      v-model="disabled" 
-        class="ma-2" 
-      />
+      v-model="active" 
+      class="ma-2" 
+    />
     <v-slider
       v-model="attribute"
       :append-icon="appendIcon"
@@ -11,9 +11,9 @@
       :min="min"
       :max="max"
       thumb-label="always"
-      :disabled="disabled"
+      :disabled="!active"
       :label="label"
-      />
+    />
  </v-layout>
 </template>
 
@@ -24,7 +24,7 @@ export default {
     attribute: null,
     min: 0,
     max: 100,
-    disabled: true
+    active: false
   }),
   props: {
     appendIcon: null,
@@ -36,13 +36,13 @@ export default {
     attribute(value) {
       this.$emit('attribute_value', value);
     },
-    disabled() {
-      if (this.disabled) {
-        this.value = null;
+    active() {
+      if (this.active) {
+        this.value = 0;
         this.$emit('attribute_value', this.value);
       }
       else {
-        this.value = 0;
+        this.value = null;
         this.$emit('attribute_value', this.value);
       }
     }

@@ -13,9 +13,10 @@ generated. Have fun jamming out!
 - [x] Remove unnecessary arrow icon from search combobox
 - [x] Add example text into search bar
 - [x] Prevent choosing more than 5 genres (max for API)
+- [x] Reverse switches on vs. off, user was confused with original setup
 - [ ] Manage genres better (Show more button?)
 - [ ] Generate playlist not just tracks (requires more detailed authentication)
-- [ ] Standardize length of sliders 
+- [ ] Standardize length of sliders? 
 - [ ] Have loading animation on Results page
 
 ## Project setup
